@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>dla Zuzienki</title>
+  <style>
+    body, html {
+      height: 100%;
+      margin: 0;
+    }
+
+    .container {
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+ 
+
+    body {
+      background-image: url('backgrounds/tlo2.png'); /* Domyślne tło */
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+  
+  </div>
+  <script>
+    const changeBackgroundButton = document.getElementById('changeBackgroundButton');
+    const backgrounds = [
+    'backgrounds/tlo2.png',
+      // Dodaj kolejne tła w odpowiedniej kolejności
+    ];
+    let currentBackgroundIndex = 0;
+
+    function changeBackground() {
+      currentBackgroundIndex = (currentBackgroundIndex + 1) % backgrounds.length;
+      const nextBackground = backgrounds[currentBackgroundIndex];
+      document.body.style.backgroundImage = `url('${nextBackground}')`;
+      changeBackgroundButton.style.display = 'none'; // Ukryj przycisk po kliknięciu
+    }
+
+    changeBackgroundButton.addEventListener('click', changeBackground);
+  </script>
+</body>
+</html>
